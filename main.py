@@ -57,6 +57,8 @@ def detect(subsection) -> int:
     elif subsection[1] == "<->":
         return 5
     elif braces != []:
+        if braces[0][-1] + 1 == len(subsection):
+            return 6
         if subsection[braces[0][-1] + 1] == "->":
             return 2
         elif subsection[braces[0][-1] + 1] == "&":
@@ -102,7 +104,15 @@ def find_(expr, com_seq_list):
             return division(subsection, expr, end, i)
         elif typ == 5:
             return bi_inclu(subsection, expr, end, i)
+        elif typ == 6:
+            return erase_braces(subsection, expr, end, i)
         k += 1
+
+def erase_braces(subsection, expr, end, i) -> list:
+    subsection.pop(0)
+    subsection.pop(-1)
+    expr[i + 1 : end] = subsection
+    return [[expr, "括号消去", " ", [0]]]
 
 def delete_comma(expr) -> list:
     while " " in expr:
@@ -123,9 +133,6 @@ def delete_comma(expr) -> list:
 def not_left(subsection, expr, end, beg) -> list:
     subsection.pop(0)
     braces = find_braces(subsection)
-    if braces != []:
-        subsection.pop(0)
-        subsection.pop(-1)
     for x in range(end, beg, -1):
         expr.pop(x)
     expr = delete_comma(expr)
@@ -138,9 +145,6 @@ def not_left(subsection, expr, end, beg) -> list:
 def not_right(subsection, expr, end, beg) -> list:
     subsection.pop(0)
     braces = find_braces(subsection)
-    if braces != []:
-        subsection.pop(0)
-        subsection.pop(-1)
     for x in range(end, beg, -1):
         expr.pop(x)
     expr = delete_comma(expr)

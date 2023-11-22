@@ -1,7 +1,7 @@
 # <center>Wang's Algorithm in Python</center>
 
-[English]: (README_EN.md)	"English"
-[简体中文]: (README.md)	"简体中文"
+[English]: (README_EN.md)
+[简体中文]: (README.md)
 
 使用了王浩算法完成了对公式的自动证明
 

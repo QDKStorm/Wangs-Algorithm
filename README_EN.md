@@ -2,7 +2,7 @@
 
 [English](README_EN.md) | [简体中文](README.md)
 
-Automated proofs of formulas were accomplished using the Wang Ho algorithm
+Automated proofs of formulas were accomplished using the Wang's algorithm
 
 Check the terms in the input formula two by two and use the 10 inference rules in Wang's algorithm to simplify them step by step until the axioms are deduced or cannot be deduced. The program will output all the reasoning steps on the console, regardless of whether the input formula is correct or not.
 

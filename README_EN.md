@@ -1,41 +1,41 @@
-- # <center>Wang's Algorithm in Python</center>
+# <center>Wang's Algorithm in Python</center>
 
-  [English](README_EN.md) | [简体中文](README.md)
+[English](README_EN.md) | [简体中文](README.md)
 
-  使用了王浩算法完成了对公式的自动证明
+Automated proofs of formulas were accomplished using the Wang Ho algorithm
 
-  两两检查输入的公式中的项，使用王浩算法中的10条推理规则逐步化简，直至推理出公理或不能推理出公理。程序将在控制台输出所有的推理步骤，不论输入的公式是否正确。
+Check the terms in the input formula two by two and use the 10 inference rules in Wang's algorithm to simplify them step by step until the axioms are deduced or cannot be deduced. The program will output all the reasoning steps on the console, regardless of whether the input formula is correct or not.
 
-  ## 使用方法
+## Usage
 
-  在控制台中克隆并进入本仓库：
+Clone and enter this repository in the console:
 
-  ```bash
-  git clone git@github.com:QDKStorm/Wangs-Algorithm.git
-  cd Wangs-Algorithm
-  ```
+```bash
+git clone git@github.com:QDKStorm/Wangs-Algorithm.git
+cd Wangs-Algorithm
+```
 
-  创建适合本项目的环境：
+Create an environment suitable for this project:
 
-  ```bash
-  conda create -n wang python=3.11
-  conda activate wang
-  ```
+```bash
+conda create -n wang python=3.11
+conda activate wang
+```
 
-  直接运行`test.py`即可：
+Just run `test.py` directly:
 
-  ```bash
-  python test.py
-  ```
+```bash
+python test.py
+```
 
-  接下来可以在窗口中输入你需要推理的公式，公式需要以`=>`开头，公式中字母与符号间至少需要一个空格作为分隔（包括括号和字母之间）。如果在这个步骤中留空，则意味着将执行一个示例程序，示例程序中证明了`=> ( a -> c ) -> ( ( b -> c ) -> ( ( a | b ) -> c ) )`，并列出了证明的所有步骤。
+Next you can enter the formula you need to reason about in the window, the formula needs to start with `=>`, and the formula needs at least one space to separate the letters from the symbols (including between the parentheses and the letters). Leaving a space in this step means that a sample program will be executed, which proves `=> ( a -> c ) -> ( ( b -> c ) -> ( ( a | b ) -> c ) ` and lists all the steps of the proof.
 
-  输入的公式中，你可以使用`&`代替`∧`、用`|`代替`∨`、用`!`代替`¬`、用`->`代替`→`、用`<->`代替`↔`、用`=>`代替`⇒`，当然，如果选择直接输入这些符号，程序也可以运行，但不建议这么做。
+In the input formulas, you can use `&` instead of `∧`, `|` instead of `∨`, `! ` instead of `¬`, `->` instead of `→`, `<->` instead of `↔`, and `=>` instead of `⇒`. Of course, the program can run if you choose to enter these symbols directly, but it is not recommended.
 
-  ![image-20231122201141147](assets/image-20231122201141147.png)
+![image-20231122201141147](assets/image-20231122201141147.png)
 
-  我们推荐尝试如下示例来体验该程序：
+We recommend trying the following example to experience the program:
 
-  - `=> a -> ( b -> a )`
-  - `=> ( a -> ( ( b -> a ) -> a ) ) -> ( ( a -> ( b -> a ) ) -> ( a -> a ) )`
-  - `=> p | q`（该公式是错误的，程序在提示公式错误之后仍然会给出推理过程，该推理过程将从一个不是公理的式子出发）
+- `=> a -> ( b -> a )`
+- `=> ( a -> ( ( b -> a ) -> a ) ) -> ( ( a -> ( b -> a ) ) -> ( a -> a ) )`
+- `=> p | q` (the formula is wrong, and the program will still give a reasoning process after indicating that the formula is wrong, which will start from an equation that is not an axiom)
